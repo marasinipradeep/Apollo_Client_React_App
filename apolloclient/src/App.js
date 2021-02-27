@@ -5,6 +5,7 @@ import { gql } from '@apollo/client';
 import ExchangeRate from './Components/ExchangeRates';
 import Dogs from './Components/Dogs';
 import DogPhoto from './Components/DogPhoto';
+import DelayedQuery from './Components/DelayedQuery';
 
 import logo from './logo.svg';
 import './App.css';
@@ -38,6 +39,7 @@ function App() {
     <ApolloProvider client={client}>
       <h2>Building Query components 🚀</h2>
      {selectedDog && <DogPhoto breed={selectedDog} />} 
+      <DelayedQuery/>
       <Dogs onDogSelected={onDogSelected} />
 
       {/* <ExchangeRate/> */}

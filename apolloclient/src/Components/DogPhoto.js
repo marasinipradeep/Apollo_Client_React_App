@@ -15,8 +15,10 @@ const GET_DOG_PHOTO = gql`
 function DogPhoto({ breed }) {
   const { loading, error, data,refetch,networkStatus } = useQuery(GET_DOG_PHOTO, {
     variables: { breed },
-    notifyOnNetworkStatusChange:true
+    notifyOnNetworkStatusChange:true,
    // pollInterval:500 // you will fetch the current breed's image from the server evry 0.5 seconds.If you set pollInterval to 0, the query will not poll.
+  // fetchPolicy: "network-only" 
+  //If all data is available locally, useQuery returns that data and doesn't query your GraphQL server. This cache-first policy is Apollo Client's default fetch policy.You can optionally specify a different fetch policy for a given query. To do so, include the fetchPolicy option in your call to useQuery:
   });
 
   if(networkStatus === NetworkStatus.refetch) return 'Refetching!';
