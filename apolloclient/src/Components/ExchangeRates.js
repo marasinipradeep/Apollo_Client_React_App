@@ -16,10 +16,10 @@ function ExchangeRates() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
 
-  return data.rates.map(({ currency, rate }) => (
+  return data.rates.map(({ currency, rate, name }) => (
     <div key={currency}>
       <p>
-        {currency}: {rate}
+        {currency}: {rate} : {name}
       </p>
     </div>
   ));
