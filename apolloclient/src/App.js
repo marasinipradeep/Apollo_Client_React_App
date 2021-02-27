@@ -1,6 +1,8 @@
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { gql } from '@apollo/client';
 
+import ExchangeRate from './Components/ExchangeRates';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -24,9 +26,7 @@ client
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div>
-        <h2>My first Apollo app 🚀</h2>
-      </div>
+    <ExchangeRate/>
     </ApolloProvider>
   );
 }
